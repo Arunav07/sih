@@ -3,7 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import { AppBar, Toolbar, Typography, InputBase, IconButton, Drawer, List, ListItemButton, ListItemText, Link } from '@mui/material';
 import { Search as SearchIcon, Menu as MenuIcon } from '@mui/icons-material';
 import MenuItem from '@mui/material/MenuItem';
-
+import Logo from '../../Assets/Logo.svg';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -97,7 +97,7 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, textAlign: "left", marginLeft: "4vw"}}
           >
-            Chanakya
+            <img src={Logo} alt="Logo" />
           </Typography>
           {/* Show the MenuItem links only on larger screens */}
           <MenuItem onClick={handleClick} sx={{ display: { xs: 'none', sm: 'block' } }}>

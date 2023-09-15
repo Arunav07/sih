@@ -1,0 +1,27 @@
+<svg id="untitled" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 64" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" style="background-color:transparent"><defs><filter id="untitled-s-text3-filter" x="-150%" width="400%" y="-150%" height="400%"><feGaussianBlur id="untitled-s-text3-filter-drop-shadow-0-blur" in="SourceAlpha" stdDeviation="0,0"/><feOffset id="untitled-s-text3-filter-drop-shadow-0-offset" dx="0" dy="0" result="tmp"/><feFlood id="untitled-s-text3-filter-drop-shadow-0-flood" flood-color="#fff"/><feComposite id="untitled-s-text3-filter-drop-shadow-0-composite" operator="in" in2="tmp"/><feMerge id="untitled-s-text3-filter-drop-shadow-0-merge" result="result"><feMergeNode id="untitled-s-text3-filter-drop-shadow-0-merge-node-1"/><feMergeNode id="untitled-s-text3-filter-drop-shadow-0-merge-node-2" in="SourceGraphic"/></feMerge></filter></defs><g id="untitled-s-g1" transform="translate(0 0.000001)"><text id="untitled-s-text1" dx="0" dy="0" font-family="&quot;untitled:::Slabo 13px&quot;" font-size="15" font-weight="400" transform="translate(45.914233 95.222016)" stroke-width="0"><tspan id="untitled-s-tspan1" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan><tspan id="untitled-s-tspan2" x="0" y="15" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text2" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(230.786763 102.819518)" stroke-width="0"><tspan id="untitled-s-tspan3" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text3" style="mix-blend-mode:multiply" dx="0" dy="0" font-family="&quot;untitled:::Montserrat&quot;" font-size="50" text-decoration="overline" font-weight="700" letter-spacing="5" transform="translate(1.000002 49.109454)" filter="url(#untitled-s-text3-filter)" fill="#55b4dd" stroke="#000c7a" stroke-width="0.25"><tspan id="untitled-s-tspan4" y="0" font-weight="700" paint-order="fill markers stroke" stroke-width="0.25"><![CDATA[
+Chanakya
+]]></tspan></text><text id="untitled-s-text4" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(276.878271 95.222016)" stroke-width="0"><tspan id="untitled-s-tspan5" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text5" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(6.358575 91.762485)" stroke-width="0"><tspan id="untitled-s-tspan6" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text6" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(-22.212582 39.977265)" stroke-width="0"><tspan id="untitled-s-tspan7" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text7" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(71.98295 126.583582)" stroke-width="0"><tspan id="untitled-s-tspan8" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text8" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(154.08683 122.328715)" stroke-width="0"><tspan id="untitled-s-tspan9" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text><text id="untitled-s-text9" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(259.871995 128.358114)" stroke-width="0"><tspan id="untitled-s-tspan10" y="0" font-weight="400" stroke-width="0"><![CDATA[
+ 
+]]></tspan></text></g><text id="untitled-s-text10" dx="0" dy="0" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" transform="translate(248.541053-99.654214)" stroke-width="0"><tspan id="untitled-s-tspan11" font-family="&quot;untitled:::Roboto&quot;" font-size="15" font-weight="400" font-style="normal" transform="translate(248.541053-99.654214)" stroke-width="0"><![CDATA[
+Sample Text
+]]></tspan></text>
+<style><![CDATA[
+@font-face {font-family: 'untitled:::Montserrat';font-style: normal;font-weight: 700;src: url(https://fonts.gstatic.com/l/font?kit=JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-e3B04OnsWdyj3OEmGWHDrMo&skey=7bc19f711c0de8f&v=v26) format('truetype');}@font-face {font-family: 'untitled:::Roboto';font-style: normal;font-weight: 400;src: url(https://fonts.gstatic.com/l/font?kit=KFOmCnqEu92Fr1Me5X5AI3RufqCX_eMiFhXEdSFm&skey=a0a0114a1dcab3ac&v=v30) format('truetype');}@font-face {font-family: 'untitled:::Slabo 13px';font-style: normal;font-weight: 400;src: url(https://fonts.gstatic.com/l/font?kit=11hEGp_azEvXZUdSBzzRcKez0CFa1aftlbBcKAERMkI7eA&skey=c374e0391fcc76cc&v=v15) format('truetype');}
+]]></style>
+</svg>
