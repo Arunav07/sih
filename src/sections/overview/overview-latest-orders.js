@@ -20,8 +20,8 @@ import { SeverityPill } from 'src/components/severity-pill';
 
 const statusMap = {
   pending: 'warning',
-  delivered: 'success',
-  refunded: 'error'
+  Paid: 'success',
+  discounted: 'error'
 };
 
 export const OverviewLatestOrders = (props) => {
@@ -29,7 +29,7 @@ export const OverviewLatestOrders = (props) => {
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest Orders" />
+      <CardHeader title="Latest Clients" />
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
@@ -42,11 +42,11 @@ export const OverviewLatestOrders = (props) => {
                   Customer
                 </TableCell>
                 <TableCell sortDirection="desc">
-                  Date
-                </TableCell>
-                <TableCell>
                   Status
                 </TableCell>
+                {/* <TableCell>
+                  Status
+                </TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -64,9 +64,9 @@ export const OverviewLatestOrders = (props) => {
                     <TableCell>
                       {order.customer.name}
                     </TableCell>
-                    <TableCell>
+                    {/* <TableCell>
                       {createdAt}
-                    </TableCell>
+                    </TableCell> */}
                     <TableCell>
                       <SeverityPill color={statusMap[order.status]}>
                         {order.status}

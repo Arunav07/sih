@@ -7,10 +7,28 @@ import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import { SvgIcon } from '@mui/material';
-
+import GavelIcon from '@mui/icons-material/Gavel';
 export const items = [
   {
-    title: 'Overview',
+    title: 'Services I Offer',
+    path: '/services',
+    icon: (
+      <SvgIcon fontSize="small">
+        <UserPlusIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Refer to IPC',
+    path: '/ipc',
+    icon: (
+      <SvgIcon fontSize="small">
+        <GavelIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Dashboard',
     path: '/',
     icon: (
       <SvgIcon fontSize="small">
@@ -19,20 +37,11 @@ export const items = [
     )
   },
   {
-    title: 'Customers',
+    title: 'Clients',
     path: '/customers',
     icon: (
       <SvgIcon fontSize="small">
         <UsersIcon />
-      </SvgIcon>
-    )
-  },
-  {
-    title: 'Companies',
-    path: '/companies',
-    icon: (
-      <SvgIcon fontSize="small">
-        <ShoppingBagIcon />
       </SvgIcon>
     )
   },
@@ -55,29 +64,11 @@ export const items = [
     )
   },
   {
-    title: 'Login',
-    path: '/auth/login',
+    title: 'FaQs',
+    path: '/settings',
     icon: (
       <SvgIcon fontSize="small">
-        <LockClosedIcon />
-      </SvgIcon>
-    )
-  },
-  {
-    title: 'Register',
-    path: '/auth/register',
-    icon: (
-      <SvgIcon fontSize="small">
-        <UserPlusIcon />
-      </SvgIcon>
-    )
-  },
-  {
-    title: 'Error',
-    path: '/404',
-    icon: (
-      <SvgIcon fontSize="small">
-        <XCircleIcon />
+        <CogIcon />
       </SvgIcon>
     )
   }

@@ -83,10 +83,10 @@ const iconMap = {
 export const OverviewTraffic = (props) => {
   const { chartSeries, labels, sx } = props;
   const chartOptions = useChartOptions(labels);
-
+  const text = ["rgb(99, 102, 241)","rgb(16, 185, 129)","rgb(247, 144, 9)"]
   return (
     <Card sx={sx}>
-      <CardHeader title="Traffic Source" />
+      <CardHeader title="Case Status" />
       <CardContent>
         <Chart
           height={300}
@@ -122,7 +122,7 @@ export const OverviewTraffic = (props) => {
                   {label}
                 </Typography>
                 <Typography
-                  color="text.secondary"
+                  color={text[index]}
                   variant="subtitle2"
                 >
                   {item}%
