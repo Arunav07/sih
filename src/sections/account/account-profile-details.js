@@ -1,4 +1,5 @@
-import { useCallback, useState } from 'react';
+import * as React from "react";
+import { useCallback, useState } from "react";
 import {
   Box,
   Button,
@@ -8,77 +9,257 @@ import {
   CardHeader,
   Divider,
   TextField,
-  Unstable_Grid2 as Grid
-} from '@mui/material';
+  Unstable_Grid2 as Grid,
+  Select,
+  Chip,
+  MenuItem,
+  OutlinedInput,
+  InputLabel,
+} from "@mui/material";
+import { Theme, useTheme } from "@mui/material/styles";
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
 
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: "Andhra Pradesh",
+    label: "Andhra Pradesh",
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: "Arunachal Pradesh",
+    label: "Arunachal Pradesh",
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: "Assam",
+    label: "Assam",
   },
   {
-    value: 'los-angeles',
-    label: 'Los Angeles'
-  }
+    value: "Bihar",
+    label: "Bihar",
+  },
+  {
+    value: "Chhattisgarh",
+    label: "Chhattisgarh",
+  },
+  {
+    value: "Goa",
+    label: "Goa",
+  },
+  {
+    value: "Gujarat",
+    label: "Gujarat",
+  },
+  {
+    value: "Haryana",
+    label: "Haryana",
+  },
+  {
+    value: "Himachal Pradesh",
+    label: "Himachal Pradesh",
+  },
+  {
+    value: "Jharkhand",
+    label: "Jharkhand",
+  },
+  {
+    value: "Kerala",
+    label: "Kerala",
+  },
+  {
+    value: "Madhya Pradesh",
+    label: "Madhya Pradesh",
+  },
+  {
+    value: "Maharashtra",
+    label: "Maharashtra",
+  },
+  {
+    value: "Manipur",
+    label: "Manipur",
+  },
+  {
+    value: "Meghalaya",
+    label: "Meghalaya",
+  },
+  {
+    value: "Mizoram",
+    label: "Mizoram",
+  },
+  {
+    value: "Nagaland",
+    label: "Nagaland",
+  },
+  {
+    value: "Odisha",
+    label: "Odisha",
+  },
+  {
+    value: "Punjab",
+    label: "Punjab",
+  },
+  {
+    value: "Rajasthan",
+    label: "Rajasthan",
+  },
+  {
+    value: "Sikkim",
+    label: "Sikkim",
+  },
+  {
+    value: "Tamil Nadu",
+    label: "Tamil Nadu",
+  },
+  {
+    value: "Telangana",
+    label: "Telangana",
+  },
+  {
+    value: "Tripura",
+    label: "Tripura",
+  },
+  {
+    value: "Uttar Pradesh",
+    label: "Uttar Pradesh",
+  },
+  {
+    value: "Uttarakhand",
+    label: "Uttarakhand",
+  },
+  {
+    value: "West Bengal",
+    label: "West Bengal",
+  },
+  {
+    value: "Andaman and Nicobar Islands",
+    label: "Andaman and Nicobar Islands",
+  },
+  {
+    value: "Chandigarh",
+    label: "Chandigarh",
+  },
+  {
+    value: "Dadra and Nagar Haveli and Daman and Diu",
+    label: "Dadra and Nagar Haveli and Daman and Diu",
+  },
+  {
+    value: "Lakshadweep",
+    label: "Lakshadweep",
+  },
+  {
+    value: "Delhi",
+    label: "Delhi",
+  },
+  {
+    value: "Puducherry",
+    label: "Puducherry",
+  },
+  {
+    value: "Jammu and Kashmir",
+    label: "Jammu and Kashmir",
+  },
+  {
+    value: "Ladakh",
+    label: "Ladakh",
+  },
+];
+
+const services = [
+  "Civil Law",
+  "Criminal Law",
+  "Family Law",
+  "Corporate Law",
+  "Property Law",
+  "Labour and Employment Law",
+  "Tax Law",
+  "Intellectual Property Law",
+  "Environmental Law",
+  "Banking and Finance Law",
+  "Immigration Law",
+  "Consumer Law",
+  "Real Estate Law",
+  "Cybersecurity and Data Privacy Law",
+  "Human Rights Law",
+  "Administrative Law",
+  "Constitutional Law",
+  "Maritime and Admiralty Law",
+  "Insurance Law",
+  "Entertainment and Media Law",
+  "Estate Planning and Probate Law",
+  "Healthcare and Medical Law",
+  "Sports Law",
+  "International Trade Law",
+  "Telecommunications Law",
+  "Antitrust and Competition Law",
+  "Energy Law",
+  "Customs and Excise Law",
+  "Agricultural Law",
+  "Construction Law",
+  "Data Privacy and Cybersecurity Law",
 ];
 
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
-    firstName: 'Anika',
-    lastName: 'Visser',
-    email: 'demo@chanakya.io',
-    phone: '',
-    state: 'los-angeles',
-    country: 'USA'
+    firstName: "Arunav",
+    lastName: "Chandra",
+    email: "demo@chanakya.io",
+    phone: "8374902650",
+    city: "Pune",
+    state: "Maharashtra",
+    country: "India",
   });
 
-  const handleChange = useCallback(
-    (event) => {
-      setValues((prevState) => ({
-        ...prevState,
-        [event.target.name]: event.target.value
-      }));
-    },
-    []
-  );
+  const handleChange = useCallback((event) => {
+    setValues((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.value,
+    }));
+  }, []);
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-    },
-    []
-  );
+  const handleSubmit = useCallback((event) => {
+    event.preventDefault();
+  }, []);
+  const theme = useTheme();
+
+  const [serviceName, setServiceName] = useState(["Civil Law"]);
+
+  function getStyles(service, serviceName, theme) {
+    return {
+      fontWeight:
+        serviceName.indexOf(service) === -1
+          ? theme.typography.fontWeightRegular
+          : theme.typography.fontWeightMedium,
+    };
+  }
+
+  const handleChangeChips = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setServiceName(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
+  };
 
   return (
-    <form
-      autoComplete="off"
-      noValidate
-      onSubmit={handleSubmit}
-    >
+    <form autoComplete="off" noValidate onSubmit={handleSubmit}>
       <Card>
-        <CardHeader
-          subheader="The information can be edited"
-          title="Profile"
-        />
+        <CardHeader subheader="The information can be edited" title="Profile" />
         <CardContent sx={{ pt: 0 }}>
           <Box sx={{ m: -1.5 }}>
-            <Grid
-              container
-              spacing={3}
-            >
-              <Grid
-                xs={12}
-                md={6}
-              >
+            <Grid container spacing={3}>
+              <Grid xs={12} md={6}>
                 <TextField
+                  disabled
                   fullWidth
                   helperText="Please specify the first name"
                   label="First name"
@@ -88,11 +269,9 @@ export const AccountProfileDetails = () => {
                   value={values.firstName}
                 />
               </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
+              <Grid xs={12} md={6}>
                 <TextField
+                  disabled
                   fullWidth
                   label="Last name"
                   name="lastName"
@@ -101,11 +280,9 @@ export const AccountProfileDetails = () => {
                   value={values.lastName}
                 />
               </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
+              <Grid xs={12} md={6}>
                 <TextField
+                  disabled
                   fullWidth
                   label="Email Address"
                   name="email"
@@ -114,10 +291,7 @@ export const AccountProfileDetails = () => {
                   value={values.email}
                 />
               </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
+              <Grid xs={12} md={6}>
                 <TextField
                   fullWidth
                   label="Phone Number"
@@ -127,10 +301,7 @@ export const AccountProfileDetails = () => {
                   value={values.phone}
                 />
               </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
+              <Grid xs={12} md={6}>
                 <TextField
                   fullWidth
                   label="Country"
@@ -140,10 +311,7 @@ export const AccountProfileDetails = () => {
                   value={values.country}
                 />
               </Grid>
-              <Grid
-                xs={12}
-                md={6}
-              >
+              <Grid xs={12} md={6}>
                 <TextField
                   fullWidth
                   label="Select State"
@@ -155,23 +323,51 @@ export const AccountProfileDetails = () => {
                   value={values.state}
                 >
                   {states.map((option) => (
-                    <option
-                      key={option.value}
-                      value={option.value}
-                    >
+                    <option key={option.value} value={option.value}>
                       {option.label}
                     </option>
                   ))}
                 </TextField>
+                <InputLabel id="servicesLabel">Chip</InputLabel>
+              </Grid>
+              <Grid xs={12} md={10}>
+                <InputLabel id="servicesLabel">Services I Offer</InputLabel>
+                <Select
+                fullWidth
+                  labelId="servicesLabel"
+                  id="demo-multiple-chip"
+                  multiple
+                  value={serviceName}
+                  onChange={handleChangeChips}
+                  input={<OutlinedInput id="select-multiple-chip" 
+                  label="Selected Services" />}
+                  renderValue={(selected) => (
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                      {selected.map((value) => (
+                        <Chip key={value} 
+                        label={value} />
+                      ))}
+                    </Box>
+                  )}
+                  MenuProps={MenuProps}
+                >
+                  {services.map((service) => (
+                    <MenuItem
+                      key={service}
+                      value={service}
+                      style={getStyles(service, serviceName, theme)}
+                    >
+                      {service}
+                    </MenuItem>
+                  ))}
+                </Select>
               </Grid>
             </Grid>
           </Box>
         </CardContent>
         <Divider />
-        <CardActions sx={{ justifyContent: 'flex-end' }}>
-          <Button variant="contained">
-            Save details
-          </Button>
+        <CardActions sx={{ justifyContent: "flex-end" }}>
+          <Button variant="contained">Save details</Button>
         </CardActions>
       </Card>
     </form>

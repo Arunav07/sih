@@ -11,11 +11,11 @@ import {
 
 const user = {
   avatar: '/assets/avatars/avatar-anika-visser.png',
-  city: 'Los Angeles',
-  country: 'USA',
+  city: 'Pune',
+  country: 'India',
   jobTitle: 'Senior Developer',
-  name: 'Anika Visser',
-  timezone: 'GTM-7'
+  name: 'Arunav Chandra',
+  timezone: 'GMT+5:30',
 };
 
 export const AccountProfile = () => (
@@ -36,7 +36,7 @@ export const AccountProfile = () => (
             width: 80
           }}
         />
-        <Typography
+        <Typography 
           gutterBottom
           variant="h5"
         >

@@ -84,9 +84,10 @@ export const AuthProvider = (props) => {
       const user = {
         id: '5e86809283e28b96d2d38537',
         avatar: '/assets/avatars/avatar-anika-visser.png',
-        name: 'Anika Visser',
-        email: 'anika.visser@chanakya.io',
-        userType: "Lawyer"
+        name: 'Arunav Chandra',
+        email: 'arunav.chandra@chanakya.io',
+        userType: "Lawyer",
+        service: "Civil Law",
       };
 
       dispatch({
@@ -118,8 +119,8 @@ export const AuthProvider = (props) => {
     const user = {
       id: '5e86809283e28b96d2d38537',
       avatar: '/assets/avatars/avatar-anika-visser.png',
-      name: 'Anika Visser',
-      email: 'anika.visser@chanakya.io'
+      name: 'Arunav Chandra',
+      email: 'arunav.chandra@chanakya.io'
     };
 
     dispatch({
@@ -142,8 +143,8 @@ export const AuthProvider = (props) => {
     const user = {
       id: '5e86809283e28b96d2d38537',
       avatar: '/assets/avatars/avatar-anika-visser.png',
-      name: 'Anika Visser',
-      email: 'anika.visser@chanakya.io',
+      name: 'Arunav Chandra',
+      email: 'arunav.chandra@chanakya.io',
       userType: "Lawyer"
     };
 
@@ -153,7 +154,7 @@ export const AuthProvider = (props) => {
     });
   };
 
-  const signUp = async (email, name, password, userType) => {
+  const signUp = async (email, name, password, userType, lawyerType) => {
     throw new Error('Sign up is not implemented');
   };
 

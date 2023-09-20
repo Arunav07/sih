@@ -30,7 +30,6 @@ const Page = () => {
     initialValues: {
       email: 'demo@chanakya.io',
       password: 'Password123!',
-      userType: 'serviceProvider',
       submit: null
     },
     validationSchema: Yup.object({
@@ -161,23 +160,7 @@ const Page = () => {
                     type="password"
                     value={formik.values.password}
                   />
-                   <RadioGroup row
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="user"
-    name="radio-buttons-group"
-  >
-   <FormControlLabel value="user" 
-    control={<Radio />} 
-    label="User" />
-    <FormControlLabel value="lawyer" 
-    control={<Radio />} 
-    label="Service Provider" />
-   
-    <FormControlLabel value="other" 
-    control={<Radio />} 
-    label="Other" />
-  </RadioGroup>
-                </Stack>
+                  </Stack>
                 {/* <FormHelperText sx={{ mt: 1 }}>
                   Optionally you can skip.
                 </FormHelperText> */}
