@@ -115,7 +115,7 @@ const data = [
   {
     id: '5e88792be2d4cfb4bf0971d9',
     address: {
-      city: 'Los Angeles',
+      city: 'Pune',
       country: 'USA',
       state: 'California',
       street: '1798  Hickory Ridge Drive'
