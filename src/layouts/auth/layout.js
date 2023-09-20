@@ -93,11 +93,11 @@ export const Layout = (props) => {
               sx={{ mb: 3 }}
               variant="subtitle1"
             >
-              A professional kit that comes with ready-to-use MUI components.
+              A portal to connect Law and World.
             </Typography>
             <img
               alt=""
-              src="/assets/auth-illustration.svg"
+              src="/assets/Project Details.png"
             />
           </Box>
         </Grid>

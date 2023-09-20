@@ -14,7 +14,10 @@ import {
   Tab,
   Tabs,
   TextField,
-  Typography
+  Typography,
+  RadioGroup,
+  FormControlLabel,
+  Radio
 } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
@@ -27,22 +30,23 @@ const Page = () => {
     initialValues: {
       email: 'demo@chanakya.io',
       password: 'Password123!',
+      userType: 'serviceProvider',
       submit: null
     },
     validationSchema: Yup.object({
       email: Yup
         .string()
-        .email('Must be a valid email')
-        .max(255)
+        .email('Must be a valid email')        
+        .max(255)        
         .required('Email is required'),
       password: Yup
         .string()
         .max(255)
-        .required('Password is required')
+        .required('Password is required'),
     }),
     onSubmit: async (values, helpers) => {
       try {
-        await auth.signIn(values.email, values.password);
+        await auth.signIn(values.email, values.password, values.userType);
         router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
@@ -59,13 +63,13 @@ const Page = () => {
     []
   );
 
-  const handleSkip = useCallback(
-    () => {
-      auth.skip();
-      router.push('/');
-    },
-    [auth, router]
-  );
+  // const handleSkip = useCallback(
+  //   () => {
+  //     auth.skip();
+  //     router.push('/');
+  //   },
+  //   [auth, router]
+  // );
 
   return (
     <>
@@ -157,10 +161,26 @@ const Page = () => {
                     type="password"
                     value={formik.values.password}
                   />
+                   <RadioGroup row
+    aria-labelledby="demo-radio-buttons-group-label"
+    defaultValue="user"
+    name="radio-buttons-group"
+  >
+   <FormControlLabel value="user" 
+    control={<Radio />} 
+    label="User" />
+    <FormControlLabel value="lawyer" 
+    control={<Radio />} 
+    label="Service Provider" />
+   
+    <FormControlLabel value="other" 
+    control={<Radio />} 
+    label="Other" />
+  </RadioGroup>
                 </Stack>
-                <FormHelperText sx={{ mt: 1 }}>
+                {/* <FormHelperText sx={{ mt: 1 }}>
                   Optionally you can skip.
-                </FormHelperText>
+                </FormHelperText> */}
                 {formik.errors.submit && (
                   <Typography
                     color="error"
@@ -179,14 +199,14 @@ const Page = () => {
                 >
                   Continue
                 </Button>
-                <Button
+                {/* <Button
                   fullWidth
                   size="large"
                   sx={{ mt: 3 }}
                   onClick={handleSkip}
                 >
                   Skip authentication
-                </Button>
+                </Button> */}
                 <Alert
                   color="primary"
                   severity="info"

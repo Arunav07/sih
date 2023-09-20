@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Box, Button, Link, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Link, Stack, TextField, Typography,Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import { useAuth } from 'src/hooks/use-auth';
 import { Layout as AuthLayout } from 'src/layouts/auth/layout';
 
@@ -15,6 +15,7 @@ const Page = () => {
       email: '',
       name: '',
       password: '',
+      userType: 'lawyer',
       submit: null
     },
     validationSchema: Yup.object({
@@ -34,7 +35,7 @@ const Page = () => {
     }),
     onSubmit: async (values, helpers) => {
       try {
-        await auth.signUp(values.email, values.name, values.password);
+        await auth.signUp(values.email, values.name, values.passwor, values.userTyped);
         router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
@@ -128,6 +129,22 @@ const Page = () => {
                   type="password"
                   value={formik.values.password}
                 />
+                <RadioGroup row
+    aria-labelledby="demo-radio-buttons-group-label"
+    defaultValue="user"
+    name="radio-buttons-group"
+  >
+      <FormControlLabel value="user" 
+    control={<Radio />} 
+    label="User" />
+    <FormControlLabel value="lawyer" 
+    control={<Radio />} 
+    label="Service Provider" />
+
+    <FormControlLabel value="other" 
+    control={<Radio />} 
+    label="Other" />
+  </RadioGroup>
               </Stack>
               {formik.errors.submit && (
                 <Typography
