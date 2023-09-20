@@ -6,6 +6,8 @@ import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
+import ChatIcon from '@heroicons/react/24/solid/ChatBubbleBottomCenterTextIcon';
+
 import { SvgIcon } from '@mui/material';
 import GavelIcon from '@mui/icons-material/Gavel';
 export const items = [
@@ -42,6 +44,15 @@ export const items = [
     icon: (
       <SvgIcon fontSize="small">
         <UsersIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Chat',
+    path: '/chat',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ChatIcon />
       </SvgIcon>
     )
   },

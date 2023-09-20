@@ -22,6 +22,7 @@
     "@mui/icons-material": "^5.14.9",
     "@mui/lab": "5.0.0-alpha.120",
     "@mui/material": "^5.11.10",
+    "@mui/styles": "^5.14.10",
     "@mui/system": "5.11.9",
     "@mui/x-date-pickers": "5.0.19",
     "apexcharts": "3.37.0",
