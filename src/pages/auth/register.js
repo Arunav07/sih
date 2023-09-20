@@ -259,11 +259,17 @@ const Page = () => {
                   )}
               </Stack>
               {formik.errors.submit && (
-                <Typography color="error" sx={{ mt: 3 }} variant="body2">
+                <Typography color="error" 
+                sx={{ mt: 3 }} 
+                variant="body2">
                   {formik.errors.submit}
                 </Typography>
               )}
-              <Button fullWidth size="large" sx={{ mt: 3 }} type="submit" variant="contained">
+              <Button fullWidth 
+              size="large"
+               sx={{ mt: 3 }} 
+               type="submit" 
+               variant="contained">
                 Continue
               </Button>
             </form>
