@@ -49,7 +49,7 @@ export const items = [
   },
   {
     title: 'Chat',
-    path: '/chat',
+    path: '/chats',
     icon: (
       <SvgIcon fontSize="small">
         <ChatIcon />
