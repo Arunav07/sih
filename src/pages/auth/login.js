@@ -46,7 +46,13 @@ const Page = () => {
     onSubmit: async (values, helpers) => {
       try {
         await auth.signIn(values.email, values.password, values.userType);
-        router.push('/');
+        if(values.userType=="Lawyer"){
+          localStorage.setItem('isLawyer', true);
+          router.push('/');
+        }
+        else{
+          router.push('/findlawyer');
+        }
       } catch (err) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: err.message });
