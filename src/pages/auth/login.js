@@ -148,6 +148,7 @@ const Page = () => {
                     onChange={formik.handleChange}
                     type="email"
                     value={formik.values.email}
+                    autoComplete='on'
                   />
                   <TextField
                     error={!!(formik.touched.password && formik.errors.password)}
@@ -159,11 +160,12 @@ const Page = () => {
                     onChange={formik.handleChange}
                     type="password"
                     value={formik.values.password}
+                    autoComplete='on'
                   />
                   <RadioGroup
                     aria-label="userType"
                     name="userType"
-                    value={formik.values.userType}
+                    value={formik.values.userType ? formik.values.userType : "Lawyer"}
                     onChange={formik.handleChange}
                     row
                   >

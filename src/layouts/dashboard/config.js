@@ -7,11 +7,14 @@ import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import ChatIcon from '@heroicons/react/24/solid/ChatBubbleBottomCenterTextIcon';
-
 import { SvgIcon } from '@mui/material';
 import GavelIcon from '@mui/icons-material/Gavel';
-export const items = [
-  {
+
+let itemsabc = [];
+
+var isLawyer = false;
+if(isLawyer){
+  itemsabc.push(  {
     title: 'Services I Offer',
     path: '/services',
     icon: (
@@ -46,41 +49,75 @@ export const items = [
         <UsersIcon />
       </SvgIcon>
     )
-  },
-  {
-    title: 'Chat',
-    path: '/chats',
+  });
+}
+else{
+  itemsabc.push({
+    title: 'Find A Lawyer',
+    path: '/findlawyer',
     icon: (
       <SvgIcon fontSize="small">
-        <ChatIcon />
+        <UserPlusIcon />
       </SvgIcon>
     )
   },
   {
-    title: 'Account',
-    path: '/account',
+    title: "My Cases",
+    path: "/cases",
     icon: (
       <SvgIcon fontSize="small">
-        <UserIcon />
+        <ShoppingBagIcon />
       </SvgIcon>
-    )
-  },
-  {
-    title: 'Settings',
-    path: '/settings',
-    icon: (
-      <SvgIcon fontSize="small">
-        <CogIcon />
-      </SvgIcon>
-    )
-  },
-  {
-    title: 'FaQs',
-    path: '/settings',
-    icon: (
-      <SvgIcon fontSize="small">
-        <CogIcon />
-      </SvgIcon>
-    )
-  }
-];
+    )},
+    {
+      title: 'Refer to IPC',
+      path: '/ipc',
+      icon: (
+        <SvgIcon fontSize="small">
+          <GavelIcon />
+        </SvgIcon>
+      )
+    }
+  )
+}
+
+itemsabc.push({
+    
+      title: 'Chat',
+      path: '/chats',
+      icon: (
+        <SvgIcon fontSize="small">
+          <ChatIcon />
+        </SvgIcon>
+      )
+    },
+    {
+      title: 'Account',
+      path: '/account',
+      icon: (
+        <SvgIcon fontSize="small">
+          <UserIcon />
+        </SvgIcon>
+      )
+    },
+    {
+      title: 'Settings',
+      path: '/settings',
+      icon: (
+        <SvgIcon fontSize="small">
+          <CogIcon />
+        </SvgIcon>
+      )
+    },
+    {
+      title: 'FaQs',
+      path: '/settings',
+      icon: (
+        <SvgIcon fontSize="small">
+          <CogIcon />
+        </SvgIcon>
+      )
+    
+})
+
+export const items = itemsabc;

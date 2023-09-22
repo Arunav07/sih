@@ -75,12 +75,12 @@ export const AuthProvider = (props) => {
     let isAuthenticated = false;
 
     try {
-      isAuthenticated = window.sessionStorage.getItem('authenticated') === 'true';
+    const  isAuthenticated = window.sessionStorage.getItem('authenticated') === 'true';
     } catch (err) {
       console.error(err);
     }
     try{
-      isLawyer = window.sessionStorage.getItem('isLawyer') === 'true';
+     const isLawyer = window.sessionStorage.getItem('isLawyer') === 'true';
     }
     catch(err){
       console.error(err);
