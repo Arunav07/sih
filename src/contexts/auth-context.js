@@ -75,12 +75,12 @@ export const AuthProvider = (props) => {
     let isAuthenticated = false;
 
     try {
-    const  isAuthenticated = window.sessionStorage.getItem('authenticated') === 'true';
+    const  isAuthenticated = window.localStorage.getItem('authenticated') === 'true';
     } catch (err) {
       console.error(err);
     }
     try{
-     const isLawyer = window.sessionStorage.getItem('isLawyer') === 'true';
+     const isLawyer = window.localStorage.getItem('isLawyer') === 'true';
     }
     catch(err){
       console.error(err);
@@ -123,7 +123,7 @@ export const AuthProvider = (props) => {
 
   const skip = () => {
     try {
-      window.sessionStorage.setItem('authenticated', 'true');
+      window.localStorage.setItem('authenticated', 'true');
     } catch (err) {
       console.error(err);
     }
@@ -149,12 +149,12 @@ export const AuthProvider = (props) => {
     try {
 
       if(userType === "Lawyer"){
-        window.sessionStorage.setItem('isLawyer', 'true');
+        window.localStorage.setItem('isLawyer', 'true');
       }
       else{
-        window.sessionStorage.setItem('isLawyer', 'false');
+        window.localStorage.setItem('isLawyer', 'false');
       }
-      window.sessionStorage.setItem('authenticated', 'true');
+      window.localStorage.setItem('authenticated', 'true');
     } catch (err) {
       console.error(err);
     }

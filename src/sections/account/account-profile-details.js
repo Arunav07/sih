@@ -250,7 +250,7 @@ export const AccountProfileDetails = () => {
     );
   };
 
-  const isLawyer = window.sessionStorage.getItem("isLawyer");
+  const isLawyer = window.localStorage.getItem("isLawyer");
   console.log(isLawyer);
   return (
     <form autoComplete="off" 
