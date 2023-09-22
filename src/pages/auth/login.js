@@ -160,6 +160,21 @@ const Page = () => {
                     type="password"
                     value={formik.values.password}
                   />
+                  <RadioGroup
+                    aria-label="userType"
+                    name="userType"
+                    value={formik.values.userType}
+                    onChange={formik.handleChange}
+                    row
+                  >
+                    <FormControlLabel value="Lawyer" 
+                    control={<Radio />} 
+                    label="Lawyer" />
+                    <FormControlLabel value="Client" 
+                    control={<Radio />} 
+                    label="Client" />
+                  </RadioGroup>
+
                   </Stack>
                 {/* <FormHelperText sx={{ mt: 1 }}>
                   Optionally you can skip.

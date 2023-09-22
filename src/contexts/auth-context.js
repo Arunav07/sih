@@ -79,17 +79,29 @@ export const AuthProvider = (props) => {
     } catch (err) {
       console.error(err);
     }
-
-    if (isAuthenticated) {
+    try{
+      isLawyer = window.sessionStorage.getItem('isLawyer') === 'true';
+    }
+    catch(err){
+      console.error(err);
+    }
+    if (isAuthenticated && isLawyer) {
       const user = {
         id: '5e86809283e28b96d2d38537',
         avatar: '/assets/avatars/avatar-anika-visser.png',
         name: 'Arunav Chandra',
         email: 'arunav.chandra@chanakya.io',
-        userType: "Lawyer",
+          userType: "Lawyer",
         service: "Civil Law",
       };
-
+      if(isAuthenticated && !isLawyer){
+        const user = {
+          id: '5e86809283e28b96d2d38537',
+          avatar: '/assets/avatars/avatar-anika-visser.png',
+          name: 'Arunav Chandra',
+          email: 'arunav.chandra@chanakya.io',
+          userType: "Client",
+      } }
       dispatch({
         type: HANDLERS.INITIALIZE,
         payload: user
@@ -135,6 +147,13 @@ export const AuthProvider = (props) => {
     }
 
     try {
+
+      if(userType === "Lawyer"){
+        window.sessionStorage.setItem('isLawyer', 'true');
+      }
+      else{
+        window.sessionStorage.setItem('isLawyer', 'false');
+      }
       window.sessionStorage.setItem('authenticated', 'true');
     } catch (err) {
       console.error(err);
