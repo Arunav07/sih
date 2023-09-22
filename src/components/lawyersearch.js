@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Card, CardContent, CardMedia, Typography,  Button, CardActionArea, CardActions } from '@mui/material';
+import { Star } from '@mui/icons-material';
 
 export default function LawyerCard({lawyer}) {
     /* 
@@ -18,7 +19,7 @@ export default function LawyerCard({lawyer}) {
           image={lawyer.image || "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"}
           alt="lawyer"
         />
-        <CardContent sx={{width: "90%"}}>
+        <CardContent sx={{width: "90%", display: "grid", gap: "10px"}}>
           <Typography gutterBottom variant="h5" component="div">
             {lawyer.name}
           </Typography>
@@ -27,8 +28,8 @@ export default function LawyerCard({lawyer}) {
                 <span style={{padding: "10px", backgroundColor: "GrayText", borderRadius: "10px", color: "aliceblue"}} key={key}>{specialization} </span>
             ))}
           </Typography>
-            <Typography variant="body2" color="text.secondary">
-                {lawyer.rating}
+            <Typography variant="body1" color="text.secondary" sx={{display: "flex", alignItems: "center", gap: "0.25rem"}}>
+                {lawyer.rating} <Star sx={{color: "goldenrod"}} color='yellow'/>
             </Typography>
             <Typography variant="body2" color="text.secondary">
                 {lawyer.city}

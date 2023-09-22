@@ -180,11 +180,14 @@ const Page = () => {
         <Container maxWidth="lg">
           <Stack spacing={3}>
             <div>
-              <Typography sx={{alignItems: "center", display: "flex", gap: "0.5rem"}} variant="h4">Find a Lawyer <PersonSearchIcon fontSize="large"/></Typography>
+              <Typography sx={{alignItems: "center", display: "flex", gap: "0.5rem"}} 
+              variant="h4">Find a Lawyer <PersonSearchIcon fontSize="large"/></Typography>
             </div>
             <Container maxWidth="lg">
-              <Grid container spacing={3}>
-                <Grid item xs={7}>
+              <Grid container
+               spacing={3}>
+                <Grid item 
+                xs={7}>
                   <InputLabel id="categoryLabel">Select a Category</InputLabel>
                   <Select
                     fullWidth
@@ -193,7 +196,6 @@ const Page = () => {
                     name="category"
                     onChange={handleChange}
                     required
-                    select
                     value={values.category ? values.category : ""}
                   >
                     {sections.map((section, key) => (
@@ -222,7 +224,8 @@ const Page = () => {
                     </Select>
                   </Grid>
                 )}
-                <Grid item xs={7}>
+                <Grid item 
+                xs={7}>
                 <InputLabel id="stateLabel">Select State</InputLabel>
                 <Select
                   fullWidth
@@ -260,8 +263,11 @@ const Page = () => {
                   </Select>
                 </Grid>
               )}
-              <Grid item xs={12}>
-                <Button variant="contained" color="primary" onClick={handleSubmit}>
+              <Grid item 
+              xs={12}>
+                <Button variant="contained" 
+                color="primary" 
+                onClick={handleSubmit}>
                   Search Lawyer
                 </Button>
               </Grid>
@@ -271,16 +277,21 @@ const Page = () => {
         </Container>
         {/* After a user submits the search */}
         {searched && (
-          <Container maxWidth="lg" sx={{marginTop: "30px", padding: "10px"}}>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
+          <Container maxWidth="lg" 
+          sx={{marginTop: "30px", padding: "10px"}}>
+          <Grid container 
+          spacing={3}>
+            <Grid item 
+            xs={12}>
               <Typography variant="h4">Lawyers</Typography>
             </Grid>
             {lawyersList.map((lawyer, key) => 
              {
               if(lawyer.city == values.city || lawyer.state == values.state || lawyer.specialization.includes(values.service) || lawyer.specialization.includes(values.category))
               return (
-                <Grid item xs={12} key={key}>
+                <Grid item 
+                xs={12} 
+                key={key}>
                   <LawyerCard lawyer={lawyer}/>
                 </Grid>
             )})}
