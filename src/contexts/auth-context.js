@@ -147,7 +147,6 @@ export const AuthProvider = (props) => {
     }
 
     try {
-
       if(userType === "Lawyer"){
         window.localStorage.setItem('isLawyer', 'true');
       }
