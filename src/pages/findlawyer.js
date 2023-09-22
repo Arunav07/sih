@@ -1,8 +1,10 @@
 import {
   Box,
+  Button,
   Chip,
   Container,
   Grid,
+  Icon,
   InputLabel,
   MenuItem,
   OutlinedInput,
@@ -18,7 +20,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { states_cities } from "src/information/states_cities";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
-
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import LawyerCard from "src/components/lawyersearch";
+import { lawyers } from "src/information/lawyers";
 const Page = () => {
   var api_key = "e7108a54f1074c53b95285e985d6a325";
   const [coordinates, setCoordinates] = useState({ latitude: 0, longitude: 0 });
@@ -140,6 +144,8 @@ const Page = () => {
     "Uttarakhand",
     "West Bengal",
   ];
+
+  const lawyersList = lawyers;
   const state_cities = states_cities;
   const handleChange = useCallback((event) => {
     setValues((prevState) => ({
@@ -148,9 +154,16 @@ const Page = () => {
     }));
   }, []);
 
+  const [searched, setSearched] = useState(false);
   const handleSubmit = useCallback((event) => {
     event.preventDefault();
-  }, []);
+    setSearched(true);
+    alert("You have searched for a lawyer in " + values.city + ", " + values.state+ " for the category " + values.category + " and service " + values.service);
+    // values.category = "";
+    // values.service = "";
+    // values.city = "";
+    // values.state = "";
+  }, [searched, values]);
 
   return (
     <>
@@ -167,7 +180,7 @@ const Page = () => {
         <Container maxWidth="lg">
           <Stack spacing={3}>
             <div>
-              <Typography variant="h4">Find a Lawyer</Typography>
+              <Typography sx={{alignItems: "center", display: "flex", gap: "0.5rem"}} variant="h4">Find a Lawyer <PersonSearchIcon fontSize="large"/></Typography>
             </div>
             <Container maxWidth="lg">
               <Grid container spacing={3}>
@@ -247,11 +260,34 @@ const Page = () => {
                   </Select>
                 </Grid>
               )}
+              <Grid item xs={12}>
+                <Button variant="contained" color="primary" onClick={handleSubmit}>
+                  Search Lawyer
+                </Button>
               </Grid>
-              
+              </Grid>  
             </Container>
           </Stack>
         </Container>
+        {/* After a user submits the search */}
+        {searched && (
+          <Container maxWidth="lg" sx={{marginTop: "30px", padding: "10px"}}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Typography variant="h4">Lawyers</Typography>
+            </Grid>
+            {lawyersList.map((lawyer, key) => 
+             {
+              if(lawyer.city == values.city || lawyer.state == values.state || lawyer.specialization.includes(values.service) || lawyer.specialization.includes(values.category))
+              return (
+                <Grid item xs={12} key={key}>
+                  <LawyerCard lawyer={lawyer}/>
+                </Grid>
+            )})}
+
+          </Grid>
+          </Container>
+        )}
       </Box>
     </>
   );
