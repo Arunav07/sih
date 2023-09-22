@@ -50,7 +50,8 @@ const [messages, setMessages] = React.useState([{ id: 1, text: "Hi there!", send
     <Typography 
     variant="h5"
     style = {{
-        marginLeft: '10px'
+        marginLeft: '10px',
+        padding: "0px 75px 0px",
     }} 
     >Client</Typography>
 
@@ -58,20 +59,26 @@ const [messages, setMessages] = React.useState([{ id: 1, text: "Hi there!", send
   
     <Box
       sx={{
-        height: "100vh",
+        height: "90%",
         display: "flex",
         flexDirection: "column",
         bgcolor: "grey.200",
-      }}
+        width: "90%",
+        margin: "auto",
+        borderRadius: "20px"
+        }}
     >
-      <Box sx={{ flexGrow: 1, overflow: "auto", p: 2 }}>
+      <Box sx={{ flexGrow: 1, overflow: "auto", p: 2,borderRadius: "20px"}}>
         {messages.map((message) => (
-          <Message key={message.id} message={message} />
+          <Message key={message.id} 
+          message={message} />
         ))}
       </Box>
       <Box sx={{ p: 2, backgroundColor: "background.default" }}>
-        <Grid container spacing={2}>
-          <Grid item xs={10}>
+        <Grid container 
+        spacing={2}>
+          <Grid item 
+          xs={10}>
             <TextField
               size="small"
               fullWidth
@@ -81,7 +88,8 @@ const [messages, setMessages] = React.useState([{ id: 1, text: "Hi there!", send
               onChange={handleInputChange}
             />
           </Grid>
-          <Grid item xs={2}>
+          <Grid item 
+          xs={2}>
             <Button
               fullWidth
               color="primary"

@@ -15,14 +15,13 @@
   },
   "dependencies": {
     "@emotion/cache": "11.10.5",
-    "@emotion/react": "^11.10.6",
+    "@emotion/react": "^11.11.1",
     "@emotion/server": "11.10.0",
-    "@emotion/styled": "^11.10.6",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "2.0.16",
     "@mui/icons-material": "^5.14.9",
     "@mui/lab": "5.0.0-alpha.120",
-    "@mui/material": "^5.11.10",
-    "@mui/styles": "^5.14.10",
+    "@mui/material": "^5.14.10",
     "@mui/system": "5.11.9",
     "@mui/x-date-pickers": "5.0.19",
     "apexcharts": "3.37.0",
@@ -31,9 +30,10 @@
     "next": "13.1.6",
     "nprogress": "0.2.0",
     "prop-types": "15.8.1",
-    "react": "18.2.0",
+    "react": "^18.2.0",
     "react-apexcharts": "1.4.0",
     "react-dom": "18.2.0",
+    "react-pdf": "^7.3.3",
     "simplebar-react": "^3.2.1",
     "yup": "1.0.0"
   },
@@ -44,6 +44,7 @@
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6"
+    "eslint-config-next": "13.1.6",
+    "raw-loader": "^4.0.2"
   }
 }
